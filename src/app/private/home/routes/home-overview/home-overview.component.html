@@ -1,0 +1,37 @@
+<div class="home-overview">
+  <div class="home-overview__label">
+    <h3>Pokemon list - <span class="advice">Pincha</span> sobre un Pokemon o <span class="advice">busca</span> uno</h3>
+  </div>
+
+  <div class="home-overview__searcher">
+    <h3>Buscardor</h3>
+    <div class="home-overview__searcher__form">
+      <input type="text" [(ngModel)]="name" #ctrl="ngModel" (keydown.enter)="onInputEnter(name)">
+      <div class="home-overview__searcher__form--btn" [routerLink]="'/home/search/' + name.toLowerCase()">
+        <p>Buscar</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-overview__list">
+    <div class="home-overview__list--item" *ngFor='let pokemon of pokemonList$ | async'
+      (click)="navigateDetails(pokemon)">
+      <p>{{pokemon.name}}</p>
+    </div>
+  </div>
+  <div *ngIf="!loaded; else elseTemplate" class="home-overview__paginator">
+    <div class="home-overview__paginator--btn" (click)="pageBack()">
+      <p>
+        < </p> </div> <div class="home-overview__paginator--text">
+          <p>Página {{currentPageIndex + 1}} de {{maxPageIndex + 1}}</p>
+    </div>
+    <div class="home-overview__paginator--btn" (click)="pageNext()">
+      <p> > </p>
+    </div>
+  </div>
+  <ng-template #elseTemplate>
+    <div class="home-overview__paginator">
+      <p><span class="advice">Cargando...</span></p>
+    </div>
+  </ng-template>
+</div>

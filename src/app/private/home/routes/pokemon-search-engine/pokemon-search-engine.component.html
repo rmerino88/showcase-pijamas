@@ -1,0 +1,79 @@
+<div class="pokemon-search">
+  <div class="pokemon-search__label">
+    <h3>Pokemon details</h3>
+  </div>
+  <div class="pokemon-search__body">
+    <ng-container *ngIf="loadedPokemon; else notFoundTemplate">
+      <div class="pokemon-search__body__img">
+        <img class="shadow-z1" [src]="loadedPokemon.sprites.front_default">
+        <img class="shadow-z1" [src]="loadedPokemon.sprites.back_default">
+      </div>
+      <div class="pokemon-search__body__elements">
+        <div class="pokemon-search__body__elements__element shadow-z1">
+          <div class="label">
+            <p>Nombre:</p>
+          </div>
+          <div class="text">
+            <p><span class="advice">{{loadedPokemon.name}}</span></p>
+          </div>
+        </div>
+        <div class="pokemon-search__body__elements__element shadow-z1">
+          <div class="label">
+            <p>Número:</p>
+          </div>
+          <div class="text">
+            <p><span class="advice">{{loadedPokemon.order}}</span></p>
+          </div>
+        </div>
+        <div class="pokemon-search__body__elements__element shadow-z1">
+          <div class="label">
+            <p>Id:</p>
+          </div>
+          <div class="text">
+            <p><span class="advice">{{loadedPokemon.id}}</span></p>
+          </div>
+        </div>
+        <div class="pokemon-search__body__elements__element shadow-z1">
+          <div class="label">
+            <p>Altura:</p>
+          </div>
+          <div class="text">
+            <p><span class="advice">{{loadedPokemon.height}}</span></p>
+          </div>
+        </div>
+        <div class="pokemon-search__body__elements__element shadow-z1">
+          <div class="label">
+            <p>Peso:</p>
+          </div>
+          <div class="text">
+            <p><span class="advice">{{loadedPokemon.weight}}</span></p>
+          </div>
+        </div>
+        <div class="pokemon-search__body__elements__element shadow-z1">
+          <div class="label">
+            <p>Tipos:</p>
+          </div>
+          <div class="text">
+            <p>
+              <span class="advice">
+                <ng-container *ngFor="let type of loadedPokemon.types">{{type.type.name}} </ng-container>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #notFoundTemplate>
+      <div *ngIf="errorLoading; else errorLoadingTemplate" class="pokemon-search__body__404">
+        <h4><span class="ko">Error</span></h4>
+        <h4>El Pokemon que has buscado no existe, o no hemos podido encontrarlo.</h4>
+      </div>
+      <ng-template #errorLoadingTemplate>
+        <h4><span class="advice">Cargando...</span></h4>
+      </ng-template>
+    </ng-template>
+  </div>
+  <div class="pokemon-search__back shadow-z1"  routerLink="/home/overview">
+    <p>Volver</p>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+@import '../../../../../assets/styles-api.scss';
+
+.header-info-view {
+  padding: 7px;
+  align-items: center;
+  background-color: $color-light;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 80px;
+  margin-bottom: 10px;
+  &__logo {
+    width: 12.5%;
+    height: 100%;
+    &--img {
+      max-width: 70px;
+      margin: auto;
+    }
+  }
+  &__info {
+    width: 75%;
+    animation: fadeIn 2s;
+  }
+  &__btn-group {
+    height: 100%;
+    margin-left: auto;
+  }
+}

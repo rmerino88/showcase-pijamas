@@ -1,0 +1,7 @@
+<div class="header-button-group">
+  <div class="header-button-group__element shadow-z1" *ngFor="let headerImgElement of headerImgSafeBtns"
+    (click)="onHeaderElmClick(headerImgElement)">
+    <sp-img-safe [imageSafe]="headerImgElement">
+    </sp-img-safe>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+@import '../assets/styles-api.scss';
+
+.sp-container {
+  margin: auto;
+  max-width: 1080px;
+  position: relative;
+  &__router-outlet {
+    background: linear-gradient($color-light 0%, $color-dark 100%);
+    display: flex;
+    flex-direction: column;
+    min-height: 55vh;
+  }
+  &__footer {
+    background-color: $color-dark;
+    height: 80px;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+.sp-container-loader {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
+  margin: auto;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  &__spinner {
+    width: 50%;
+  }
+}

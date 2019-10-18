@@ -1,0 +1,20 @@
+<div class="header-info-view shadow-z1">
+  <div class="header-info-view__logo">
+    <div class="header-info-view__logo--img">
+      <sp-img-safe [imageSafe]="headerImage"></sp-img-safe>
+    </div>
+  </div>
+
+  <div class="header-info-view__info">
+    <ng-container *ngIf="userLogged; else loginWarningTemplate ">
+      <h4>Ahora estás conectado como <span class="advice">{{userLogged}}</span></h4>
+    </ng-container>
+    <ng-template #loginWarningTemplate>
+      <h4>Necesitas hacer <span class="advice">login</span> para poder navegar por la web.</h4>
+    </ng-template>
+  </div>
+
+  <div class="header-info-view__btn-group">
+    <sp-header-button-group (clickedHeaderBtn)="clickedHeaderBtn($event)"></sp-header-button-group>
+  </div>
+</div>

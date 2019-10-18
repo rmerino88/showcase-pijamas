@@ -1,0 +1,24 @@
+<div class="login-view-component">
+  <div class="login-view-component__form">
+    <h3>Introduce usuario y contraseña</h3>
+    <form class="login-view-component__form__inputs" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="login-view-component__form__inputs--input">
+        <p>Usuario:</p>
+        <input type="text" formControlName="user">
+      </div>
+      <div class="login-view-component__form__inputs--input">
+        <p>Contraseña:</p>
+        <input type="text" formControlName="password">
+      </div>
+      <div class="login-view-component__form__inputs--button shadow-z1">
+        <input type="submit" value="Login" [disabled]="!loginForm.valid">
+      </div>
+    </form>
+  </div>
+  <div class="login-view-component__login-info">
+    <p [innerHtml]="formErrorHtml"></p>
+    <p>(*)<span class="advice">Usuario</span> puede ser <span class="advice">cualquiera</span> el <span
+        class="warning">password</span> siempre será
+      "<span class="warning">123</span>"</p>
+  </div>
+</div>

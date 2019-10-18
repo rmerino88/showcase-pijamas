@@ -1,0 +1,79 @@
+@import '../../../../../assets/styles-api.scss';
+
+.home-overview {
+  animation: fadeIn 1.5s;
+  margin: auto;
+  padding: 10px;
+  position: relative;
+  width: 75%;
+  &__searcher {
+    margin-bottom: 20px;
+    &__form {
+      display: flex;
+      align-items: center;
+      &--btn {
+        border: 1px solid white;
+        cursor: pointer;
+        display: flex;
+        height: 35px;
+        margin-left: 10px;
+        text-transform: capitalize;
+        width: 204px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &--item {
+      border: 1px solid white;
+      cursor: pointer;
+      margin-bottom: 5px;
+      padding: 0px 10px;
+      text-transform: capitalize;
+      width: 19%;
+    }
+    &--item:hover {
+      background-color: $color-dark;
+      transition: all 0.5s linear;
+      p {
+        color: $color-advice;
+        transition: all 0.5s linear;
+      }
+    }
+  }
+  &__paginator {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    &--text {
+      margin: 0px 20px;
+    }
+    &--btn {
+      border-radius: 25px;
+      border: 1px solid white;
+      cursor: pointer;
+      height: 50px;
+      padding: 0px 10px;
+      text-align: center;
+      width: 50px;
+    }
+    &--btn:hover {
+      background-color: $color-dark;
+      transition: all 0.5s linear;
+      p {
+        color: $color-advice;
+        transition: all 0.5s linear;
+      }
+    }
+  }
+}
+.loader {
+  height: 100px;
+  margin: auto;
+  width: 100px;
+}

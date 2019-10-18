@@ -1,0 +1,54 @@
+@import '../../../../../assets/styles-api.scss';
+
+.pokemon-search {
+  animation: fadeIn 1.5s;
+  margin: auto;
+  padding: 10px;
+  position: relative;
+  width: 75%;
+  &__label {
+    span {
+      text-transform: capitalize;
+    }
+  }
+  &__body {
+    &__img {
+      img {
+        background-color: $color-light;
+        margin: 10px 6%;
+      }
+    }
+    &__elements {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      &__element {
+        align-items: center;
+        background-color: $color-light;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 5px;
+        margin-right: 1%;
+        padding: 3px;
+        width: 24%;
+        .label {
+          margin-right: 5%;
+        }
+        .text {
+          overflow: hidden;
+          margin-right: 3%;
+          p {
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+  &__back {
+    background-color: $color-light;
+    cursor: pointer;
+    padding: 5px;
+    text-align: center;
+  }
+}

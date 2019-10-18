@@ -1,0 +1,23 @@
+.shadow-z1 {
+  box-shadow: 0px 0px 5px 0px $color-black;
+}
+.shadow-z1-light {
+  box-shadow: 0px 0px 5px 0px $color-white;
+}
+
+.border-white {
+  border: 1px solid $color-white;
+  border-radius: 3px;
+}
+span.ok {
+  color: $color-ok;
+}
+span.ko {
+  color: $color-ko;
+}
+span.advice {
+  color: $color-advice;
+}
+span.warning {
+  color: $color-warn;
+}

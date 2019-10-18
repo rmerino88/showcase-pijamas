@@ -1,0 +1,12 @@
+<div class="sp-container">
+  <sp-header-info-view></sp-header-info-view>
+  <div class="sp-container__router-outlet shadow-z1">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="sp-container__footer shadow-z1"></div>
+  <div class="sp-container-loader" *ngIf="loading">
+    <div class="sp-container-loader__spinner">
+      <sp-main-loader></sp-main-loader>
+    </div>
+  </div>
+</div>
